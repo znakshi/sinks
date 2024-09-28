@@ -1,35 +1,229 @@
-/* Outdated CSS */
+/*general*/
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    margin: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    margin: 0;
-    padding: 0;
-}
-
-p {
-    margin: 0;
-    padding: 0;
-}
-
-img {
+    background-color: #5ea198;
+  }
+  
+  .container {
     width: 100%;
-    height: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    color: rgb(222, 230, 193);
+    outline: none;
+    text-align: center;
+  }
+  
+  h1:hover {
+    font-variation-settings: "wght" 582; 
+    letter-spacing: 1px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    line-height: 150%;
+    text-align: center;
+    color: MintCream;
+    letter-spacing: .5px;
+  }
+
+
+/*menu*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gambetta', serif;
+  }
+
+  .wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(222, 230, 193);
+    clip-path: circle(25px at calc(100% - 45px) 45px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  #active:checked ~ .wrapper{
+    clip-path: circle(75%);
+  }
+
+  .menu-btn{
+    position: fixed;
+    z-index: 2;
+    right: 20px;
+    top: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    background: rgb(222, 230, 193);
+    transition: all 0.3s ease-in-out;
+  }
+
+  #active:checked ~ .menu-btn{
+    color: #fff;
+  }
+
+  #active:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+
+  .wrapper ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+  }
+
+  .wrapper ul li{
+    margin: 15px 0;
+  }
+
+  .wrapper ul li a{
+    color: none;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 5px 30px;
+    color: rgb(222, 230, 193);
+    border-radius: 50px;
+    background: #5d9c94;
+    position: relative;
+    line-height: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper ul li a:after{
+    position: absolute;
+    content: "";
+    background: #fff;
+     background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    width: 104%;
+    height: 110%;
+    left: -2%;
+    top: -5%; 
+    border-radius: 50px;
+    transform: scaleY(0);
+    z-index: -1;
+    animation: rotate 1.5s linear infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .wrapper ul li a:hover:after{
+    transform: scaleY(1);
+  }
+
+  .wrapper ul li a:hover{
+    color: #fff;
+  }
+
+  input[type="checkbox"]{
+    display: none;
+  }
+
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    text-align: center;
+    width: 100%;
+    color: #202020;
+  }
+
+  .content .title{
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .content p{
+    font-size: 35px;
+    font-weight: 600;
+  }
+
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+
+/*sinks*/
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #f0e9e9;
+  text-align: center; 
+  font-size: 20px;
+}
+
+.accordion {
+  max-width: 800px;
+  text-align: left;
+
+article {
+  border: 1px solid #ffffff;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+input[type="radio"] {
+  appearance: none;
+  position: fixed;
+  top: -100vh; left: -100vh;
+}
+
+input[type="radio"] ~ div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+input[type="radio"]:checked ~ div {
+  max-height: 500px; 
+}
+  
+div img {
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin: 0 auto 1em;
+  border-radius: 15px;
+}
+
+/*footer*/
+footer {
+  text-align: center;
+  color: white;
+  position: relative;
 }
