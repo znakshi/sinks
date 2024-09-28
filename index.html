@@ -10,6 +10,7 @@
         <h1>Sink R Us</h1>
           <p>Your one-stop shop for all types of sinks</p>
     </div>
+</head>
       
     <body>
       <input type="checkbox" id="active">
@@ -17,16 +18,16 @@
         <div class="wrapper">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#about-us" onclick="document.getElementById('active').checked = false;">About Us</a></li>
-            <li><a href="#types-of-sinks" onclick="document.getElementById('active').checked = false;">Types of Sinks</a></li>
-            <li><a href="#features" onclick="document.getElementById('active').checked = false;">Features</a></li>
+            <li><a href="#about-us" onclick="openSection('article1')">About Us</a></li>
+            <li><a href="#types-of-sinks" onclick="openSection('article2')">Types of Sinks</a></li>
+            <li><a href="#features" onclick="openSection('article3')">Features</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
 
     <div class="accordion">   
       <article id="about-us">
-        <input id="article1" type="radio" name="articles" checked>
+        <input id="article1" type="radio" name="articles">
           <label for="article1">
             <h2>About Our Sinks</h2>
           </label>
@@ -58,8 +59,24 @@
             </div>
       </article>
     </div>
+    </body>
     
     <footer>
       <p>@2024 Sink R Us</p>
     </footer>
+
+    <script>
+      function openSection(articleId) {
+          // Uncheck the menu to close it
+          document.getElementById('active').checked = false;
+          // Scroll to the article
+          document.getElementById(articleId).scrollIntoView({ behavior: 'smooth' });
+          // Activate the corresponding radio button to expand the content
+          document.getElementById(articleId).checked = true;
+      }
+    </script>
+
+    </body>
+</html>
+
         
