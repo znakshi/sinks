@@ -227,3 +227,36 @@ footer {
   color: white;
   position: relative;
 }
+
+/* Tablet styles */
+@media (min-width: 600px) {
+  h1 {
+      font-size: 8vw;
+  }
+
+  .wrapper ul li a {
+      font-size: 1.25rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  h1 {
+      font-size: 6vw;
+  }
+
+  .wrapper ul li a {
+      font-size: 1.1rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  h1 {
+      font-size: 5vw;
+  }
+
+  .wrapper ul li a {
+      font-size: 1rem;
+  }
+}
